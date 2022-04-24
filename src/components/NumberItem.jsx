@@ -16,9 +16,8 @@ export function NumberItem(props) {
 
   return (
     <section className="numberContainer">
-      <div className="image" />
-      <h2 className="title">{title}</h2>
-      <h1 className="data">{data}</h1>
+      <h2 className="numberTitle">{title}</h2>
+      <h1 className="numberData">{data}</h1>
     </section>
   );
 }

@@ -1,8 +1,8 @@
 import { useConfig } from "./config/useConfig";
 import { ListItem } from "./components/ListItem";
 import { NumberItem } from "./components/NumberItem";
-import Grid from "@mui/material/Grid";
 import "./App.css";
+import { Box } from "@mui/material";
 
 function App() {
   const configData = useConfig();
@@ -13,13 +13,9 @@ function App() {
 
   configData.columns[0].widgets.forEach((element) => {
     listArray.push(
-      <Grid item xs={12} key={element.title}>
-        <ListItem
-          title={element.title}
-          subtitle={element.subtitle}
-          api={element.api}
-        />
-      </Grid>
+      <Box gridColumn="span 12">
+        <ListItem title={element.title} api={element.api} />
+      </Box>
     );
   });
 
@@ -28,31 +24,30 @@ function App() {
 
   configData.columns[1].widgets.forEach((element) => {
     numberArray.push(
-      <Grid item xs={6} key={element.title}>
+      <Box sx={{ width: "45%", float: "left" }}>
         <NumberItem title={element.title} api={element.api} />
-      </Grid>
+      </Box>
     );
   });
 
   return (
-    <div className="backgroundGray">
-      <Grid container spacing={2}>
-        <Grid container item xs={4}>
-          {listArray}
-        </Grid>
-
-        <Grid
-          container
-          item
-          xs={8}
-          rowSpacing={1}
-          columnSpacing={1}
-          className="numberBackground"
-        >
-          {numberArray}
-        </Grid>
-      </Grid>
-    </div>
+    <Box
+      display="grid"
+      gridTemplateColumns="repeat(12, 1fr)"
+      gap={2}
+      sx={{ padding: 5 }}
+    >
+      <Box gridColumn="span 3">
+        <div>{configData.columns[0].heading}</div>
+        {listArray}
+      </Box>
+      <Box gridColumn="span 6" gap={"1em"}>
+        <Box gridColumn="span 12">
+          <div>{configData.columns[1].heading}</div>
+        </Box>
+        {numberArray}
+      </Box>
+    </Box>
   );
 }
 

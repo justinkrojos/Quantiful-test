@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "../config/helpers";
+import "./list-item.css";
+import { Grid } from "@mui/material";
 
 // Container for list-type data
 export function ListItem(props) {
-  const { title, subtitle, api } = props;
+  const { title, api } = props;
 
   const [data, setData] = useState([]);
 
@@ -18,12 +20,13 @@ export function ListItem(props) {
   }, []);
 
   return (
-    <div>
-      <h1>{title}</h1>
-      <i>{subtitle}</i>
-      {data.map((x) => {
-        return <p key={x}>{x}</p>;
-      })}
+    <div className="listContainer">
+      <h2 className="listTitle">{title}</h2>
+      <div className="bodyContainer">
+        {data.map((x) => {
+          return <div className="listData">{x}</div>;
+        })}
+      </div>
     </div>
   );
 }
