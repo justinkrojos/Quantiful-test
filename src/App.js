@@ -2,6 +2,7 @@ import { useConfig } from "./config/useConfig";
 import { ListItem } from "./components/ListItem";
 import { NumberItem } from "./components/NumberItem";
 import Grid from "@mui/material/Grid";
+import "./App.css";
 
 function App() {
   const configData = useConfig();
@@ -34,15 +35,24 @@ function App() {
   });
 
   return (
-    <Grid container spacing={4}>
-      <Grid container item xs={4}>
-        {listArray}
-      </Grid>
+    <div className="backgroundGray">
+      <Grid container spacing={2}>
+        <Grid container item xs={4}>
+          {listArray}
+        </Grid>
 
-      <Grid container item xs={8}>
-        {numberArray}
+        <Grid
+          container
+          item
+          xs={8}
+          rowSpacing={1}
+          columnSpacing={1}
+          className="numberBackground"
+        >
+          {numberArray}
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 }
 

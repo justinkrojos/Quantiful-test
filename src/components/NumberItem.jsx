@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "../config/helpers";
+import "./number-item.css";
 
 // Container for number-type data
 export function NumberItem(props) {
@@ -14,9 +15,10 @@ export function NumberItem(props) {
   }, []);
 
   return (
-    <div>
-      <h1>{title}</h1>
-      <p key={title}>{data}</p>
-    </div>
+    <section className="numberContainer">
+      <div className="image" />
+      <h2 className="title">{title}</h2>
+      <h1 className="data">{data}</h1>
+    </section>
   );
 }
