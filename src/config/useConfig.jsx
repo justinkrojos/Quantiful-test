@@ -9,7 +9,7 @@ const configuration = {
       heading: "General Pokemon information",
       widgets: [
         {
-          title: "Pokemon colours",
+          title: "Pokemon Colours",
           subtitle: "List of all the colours",
           type: "list",
           api: "https://pokeapi.co/api/v2/pokemon-color/",
@@ -53,7 +53,7 @@ export function useConfig() {
 
   useEffect(() => {
     setConfig(configuration);
-  }, [config]);
+  }, []);
 
   return config;
 }
