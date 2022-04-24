@@ -6,6 +6,7 @@ import "./number-item.css";
 export function NumberItem(props) {
   const { title, api } = props;
 
+  // Contains numerical value to be displayed
   const [data, setData] = useState(0);
 
   useEffect(() => {
@@ -15,7 +16,7 @@ export function NumberItem(props) {
   }, []);
 
   return (
-    <section className="numberContainer">
+    <section>
       <h2 className="numberTitle">{title}</h2>
       <h1 className="numberData">{data}</h1>
     </section>

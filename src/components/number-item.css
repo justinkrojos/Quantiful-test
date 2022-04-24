@@ -1,19 +1,9 @@
-.numberContainer {
-  border-radius: 15px;
-  /* height: 170px; */
-  padding: 10px 20px;
-  background: url("../assets/pokeball.png") right bottom no-repeat,
-    url("../assets/pikachu.png") right bottom no-repeat, #f7d02c;
-  background-size: 150px 150px, 120px 120px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
-}
-
 .numberTitle {
   color: white;
 }
 
 .numberData {
+  color: rgba(255, 255, 255, 0.6);
   font-size: 70px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.6);
 }

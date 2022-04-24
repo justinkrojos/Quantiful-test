@@ -8,12 +8,14 @@ function App() {
   const configData = useConfig();
   // console.log(configData);
 
+  const test = [];
+
   // Array to hold JSX elements for list data
   const listArray = [];
 
   configData.columns[0].widgets.forEach((element) => {
     listArray.push(
-      <Box gridColumn="span 12">
+      <Box className="boxList">
         <ListItem title={element.title} api={element.api} />
       </Box>
     );
@@ -24,7 +26,7 @@ function App() {
 
   configData.columns[1].widgets.forEach((element) => {
     numberArray.push(
-      <Box sx={{ width: "45%", float: "left" }}>
+      <Box className="boxItem">
         <NumberItem title={element.title} api={element.api} />
       </Box>
     );
@@ -35,13 +37,13 @@ function App() {
       display="grid"
       gridTemplateColumns="repeat(12, 1fr)"
       gap={2}
-      sx={{ padding: 5 }}
+      sx={{ padding: 5, backgroundColor: "#EEEEEE" }}
     >
-      <Box gridColumn="span 3">
+      <Box gridColumn="span 3" className="columnContainer">
         <div>{configData.columns[0].heading}</div>
         {listArray}
       </Box>
-      <Box gridColumn="span 6" gap={"1em"}>
+      <Box gridColumn="span 6" className="columnContainer">
         <Box gridColumn="span 12">
           <div>{configData.columns[1].heading}</div>
         </Box>

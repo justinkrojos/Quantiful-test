@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "../config/helpers";
 import "./list-item.css";
-import { Grid } from "@mui/material";
 
 // Container for list-type data
 export function ListItem(props) {
   const { title, api } = props;
 
+  // Contains array of data to be listed
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetchData(api).then((x) => {
+    fetchData(api).then((out) => {
       setData(
-        x.results.map((y) => {
-          return y.name;
+        out.results.map((pokedata) => {
+          return pokedata.name;
         })
       );
     });
   }, []);
 
   return (
-    <div className="listContainer">
+    <div>
       <h2 className="listTitle">{title}</h2>
       <div className="bodyContainer">
         {data.map((x) => {

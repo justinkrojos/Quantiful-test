@@ -38,7 +38,49 @@
 }
 
 .columnContainer {
-  /* background-color: #f5f5f5; */
-  /* display: flex; */
+  background-color: #f5f5f5;
+  padding: 10px;
   border-radius: 15px;
+  box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.2);
+}
+
+.boxList {
+  margin: 10px;
+  background: url("./assets/leaves.png") left top no-repeat,
+    url("./assets/pokeball.png") right top no-repeat, #62dbc1;
+  background-size: 100px 100px, 150px 150px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  padding: 5px 0 0 0;
+}
+
+.boxItem {
+  margin: 10px;
+  width: calc(50% - 60px);
+  float: left;
+  background: url("./assets/pokeball.png") right bottom no-repeat,
+    url("./assets/pikachu.png") right bottom no-repeat, #f7d02c;
+  background-size: 150px 150px, 120px 120px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+}
+
+/* Additional styles based on pokemon colours */
+.boxItem:nth-child(4n + 1) {
+  background: url("./assets/pokeball.png") right bottom no-repeat,
+    url("./assets/magikarp.png") right bottom no-repeat, #6390f0;
+  background-size: 150px 150px, 120px 120px;
+}
+
+.boxItem:nth-child(4n + 2) {
+  background: url("./assets/pokeball.png") right bottom no-repeat,
+    url("./assets/charmander.png") right bottom no-repeat, #ee8130;
+  background-size: 150px 150px, 130px 130px;
+}
+
+.boxItem:nth-child(4n + 3) {
+  background: url("./assets/pokeball.png") right bottom no-repeat,
+    url("./assets/bulbasaur.png") right bottom no-repeat, #7ac74c;
+  background-size: 150px 150px, 140px 140px;
 }
