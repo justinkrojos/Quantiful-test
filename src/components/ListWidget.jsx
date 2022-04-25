@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "../config/helpers";
-import "./list-item.css";
+import styles from "./ListWidget.module.css";
 
 // Container for list-type data
-export function ListItem(props) {
+export default function ListWidget(props) {
   const { title, api } = props;
 
   // Contains array of data to be listed
@@ -11,20 +11,25 @@ export function ListItem(props) {
 
   useEffect(() => {
     fetchData(api).then((out) => {
+      console.log(out.results);
       setData(
         out.results.map((pokedata) => {
           return pokedata.name;
         })
       );
     });
-  }, []);
+  }, [api]);
 
   return (
     <div>
-      <h2 className="listTitle">{title}</h2>
-      <div className="bodyContainer">
-        {data.map((x) => {
-          return <div className="listData">{x}</div>;
+      <h2 className={styles.title}>{title}</h2>
+      <div className={styles.container}>
+        {data.map((value) => {
+          return (
+            <div className={styles.data} key={value}>
+              {value}
+            </div>
+          );
         })}
       </div>
     </div>

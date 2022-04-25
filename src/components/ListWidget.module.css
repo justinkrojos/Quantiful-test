@@ -1,15 +1,15 @@
-.listTitle {
+.title {
   color: white;
   padding: 10px 20px;
 }
 
-.bodyContainer {
+.container {
   background-color: white;
   border-radius: 15px;
   padding: 20px 0;
 }
 
-.listData {
+.data {
   background: url("../assets/pokeball.png") right no-repeat,
     linear-gradient(to right, #44b199, #dff3ef) no-repeat;
   background-size: 50px 50px, 100% 100%;

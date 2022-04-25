@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "../config/helpers";
-import "./number-item.css";
+import styles from "./NumberWidget.module.css";
 
 // Container for number-type data
-export function NumberItem(props) {
+export default function NumberWidget(props) {
   const { title, api } = props;
 
   // Contains numerical value to be displayed
@@ -13,12 +13,12 @@ export function NumberItem(props) {
     fetchData(api).then((x) => {
       setData(x.pokemon_species_details.length);
     });
-  }, []);
+  }, [api]);
 
   return (
-    <section>
-      <h2 className="numberTitle">{title}</h2>
-      <h1 className="numberData">{data}</h1>
-    </section>
+    <div>
+      <h2 className={styles.title}>{title}</h2>
+      <h1 className={styles.data}>{data}</h1>
+    </div>
   );
 }

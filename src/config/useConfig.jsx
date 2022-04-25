@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // Copied over from test brief
-const configuration = {
+export const configuration = {
   columns: [
     {
       // First column
@@ -43,7 +43,7 @@ const configuration = {
           api: "https://pokeapi.co/api/v2/gender/2/",
         },
         {
-          title: "Male count",
+          title: "Example count",
           type: "number",
           api: "https://pokeapi.co/api/v2/gender/2/",
         },

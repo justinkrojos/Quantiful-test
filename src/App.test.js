@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, act } from "@testing-library/react";
+import App from "./App";
+import { configuration } from "./config/useConfig.jsx";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+  it("Loads columns correctly", async () => {
+    act(() => render(<App />));
+    expect(
+      screen.getByText(configuration.columns[0].heading)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(configuration.columns[1].heading)
+    ).toBeInTheDocument();
+  });
 });
