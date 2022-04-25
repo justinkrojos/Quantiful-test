@@ -11,7 +11,6 @@ export default function ListWidget(props) {
 
   useEffect(() => {
     fetchData(api).then((out) => {
-      console.log(out.results);
       setData(
         out.results.map((pokedata) => {
           return pokedata.name;
